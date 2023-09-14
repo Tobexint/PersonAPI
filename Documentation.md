@@ -63,24 +63,28 @@
 ]
 
 -POST REQUEST:  $ curl -sX POST http://127.0.0.1:5000/persons -H 'Content-Type:application/json' -d '{"first_name":"Emmanuel", "last_name":"White"}'
+
 -POST RESPONSE:  
 {
   "message": "Person created successfully"
 }
 
--PUT REQUEST:   $ curl -X PUT \
+-PUT REQUEST:   
+>            $ curl -X PUT \
 >           -H 'Content-Type: application/json' \
 >           -d '{"first_name":"Sarah", "last_name":"Ahmed"}' \
 >           http://127.0.0.1:5000/persons/5
+
 -PUT RESPONSE:   
 {
   "message": "Person updated successfully"
 }
 
 -DELETE REQUEST: $ curl -sX DELETE  http://127.0.0.1:5000/persons/5
+
 -DELETE RESPONSE: {
                      "message": "Person deleted successfully"
                   }
 
-## Setup
+## Setup on local terminal
 - Python app.py

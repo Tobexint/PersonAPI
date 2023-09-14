@@ -6,7 +6,8 @@
 
 - POST: curl -sX POST http://127.0.0.1:5000/persons -H 'Content-Type:application/json' -d '{"first_name":"u", "last_name":"o"}'
 
-- PUT: curl -X PUT \
+- PUT:
+       curl -X PUT \
                   -H 'Content-Type:application/json' \
                   -d '{"first_name":"Sarah", "last_name":"Ahmed"}' \
                   http://127.0.0.1:5000/persons/5

@@ -2,11 +2,50 @@
 
 -WEBSITE LINK: https://txyzv.onrender.com/api
 
+## Sample Usages
+
+## POST
+
+- curl -sX POST https://txyzv.onrender.com/api -H 'Content-Type:application/json' -d '{"first_name":"Mark", "last_name":"Whyte"}'
+- 
+- {
+  "message": "Person created successfully"
+  }
+
+## GET
+
+- curl https://txyzv.onrender.com/api
+
+[
+  {
+    "first_name": "Tony",
+    "last_name": "Wilson"
+  },
+  
+  {
+    "first_name": "Mark",
+    "last_name": "Essien"
+  },
+  
+  {
+    "first_name": "Mark",
+    "last_name": "Whyte"
+  }
+]
+
+- curl https://txyzv.onrender.com/api/1
+
+{
+  "first_name": "Tony",
+  "id": 1,
+  "last_name": "Wilson"
+}
+
 ## Standard formats for requests
 
 - GET: curl -sL http://127.0.0.1:5000
 
-- GET: curl -sL http://127.0.0.1:5000/persons
+- GET: curl -sL http://127.0.0.1:5000/api
 
 - POST: curl -sX POST http://127.0.0.1:5000/persons -H 'Content-Type:application/json' -d '{"first_name":"u", "last_name":"o"}'
 
@@ -14,9 +53,9 @@
        curl -X PUT \
                   -H 'Content-Type:application/json' \
                   -d '{"first_name":"Sarah", "last_name":"Ahmed"}' \
-                  http://127.0.0.1:5000/persons/5
+                  http://127.0.0.1:5000/api/5
 
-- DELETE: curl -sX DELETE http://127.0.0.1:5000/persons/2
+- DELETE: curl -sX DELETE http://127.0.0.1:5000/api/2
 
 ## Standard format for responses
 

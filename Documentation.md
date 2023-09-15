@@ -1,3 +1,7 @@
+## Online Setup
+
+-WEBSITE LINK: https://txyzv.onrender.com/persons
+
 ## Standard formats for requests
 
 - GET: curl -sL http://127.0.0.1:5000
@@ -88,3 +92,6 @@
 
 ## Setup on local terminal
 - Python app.py
+
+## Limitations
+- I was unable to host my initial database of choice(sqlite) and had to switch to postgresql.

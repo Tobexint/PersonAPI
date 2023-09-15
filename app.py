@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
+import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///park.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+#postgres://tobexsql_user:3umbqGCl6oy93APc00dDFcf5cVKiUfGk@dpg-ck1vu3n03lhc73d6up9g-a.oregon-postgres.render.com/tobexsql
+#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 CORS(app)
 
@@ -81,4 +83,4 @@ def delete_person(person_id):
 
 if __name__ == '__main__':
     #db.create_all()
-    app.run(host="0.0.0.0", port="5000", debug=True)
+    app.run(debug=True)

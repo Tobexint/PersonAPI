@@ -1,6 +1,6 @@
 ## Online Setup
 
--WEBSITE LINK: https://txyzv.onrender.com/persons
+-WEBSITE LINK: https://txyzv.onrender.com/api
 
 ## Standard formats for requests
 

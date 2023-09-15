@@ -24,7 +24,7 @@ class Person(db.Model):
 def index():
     return '<h1>Hello Welcome</h1>'
 
-@app.route('/persons', methods = ['GET'])
+@app.route('/api', methods = ['GET'])
 def get_all_persons():
     persons = Person.query.all()
     result = []
@@ -32,7 +32,7 @@ def get_all_persons():
         result.append({'first_name': person.first_name, 'last_name': person.last_name})
     return jsonify(result)
 
-@app.route('/persons/<int:person_id>', methods=['GET'])
+@app.route('/api/<int:person_id>', methods=['GET'])
 def get_person(person_id):
     person = Person.query.get(person_id)
     if person:
@@ -40,7 +40,7 @@ def get_person(person_id):
     else:
         return jsonify({'error': 'Person not found'})
 
-@app.route('/persons/<first_name>,<last_name>', methods=['GET'])
+@app.route('/api/<first_name>,<last_name>', methods=['GET'])
 def get_person_by_name(first_name, last_name):
     person = Person.query.filter_by(first_name=first_name, last_name=last_name).first()
     if person:
@@ -48,7 +48,7 @@ def get_person_by_name(first_name, last_name):
     else:
         return jsonify({'error': 'Person not found'})
 
-@app.route('/persons', methods=['POST'])
+@app.route('/api', methods=['POST'])
 def create_person():
     first_name = request.json.get('first_name')
     last_name = request.json.get('last_name')
@@ -57,7 +57,7 @@ def create_person():
     db.session.commit()
     return jsonify({'message': 'Person created successfully'})
 
-@app.route('/persons/<int:person_id>', methods=['PUT'])
+@app.route('/api/<int:person_id>', methods=['PUT'])
 def update_person(person_id):
     person = Person.query.get(person_id)
     if person:
@@ -70,7 +70,7 @@ def update_person(person_id):
     else:
         return jsonify({'error': 'Person not found'})
 
-@app.route('/persons/<int:person_id>', methods=['DELETE'])
+@app.route('/api/<int:person_id>', methods=['DELETE'])
 def delete_person(person_id):
     person = Person.query.get(person_id)
     if person:

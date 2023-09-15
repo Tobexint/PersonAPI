@@ -23,6 +23,7 @@ MarkupSafe==2.1.2
 mysql==0.0.3
 mysqlclient==2.1.1
 platformdirs==3.1.1
+psycopg2-binary==2.9.7
 pycparser==2.21
 PyJWT==1.4.2
 requests==2.31.0
